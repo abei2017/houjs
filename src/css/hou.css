@@ -1,0 +1,230 @@
+/* 公共属性 */
+body {
+    background: #F3F3F3;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", 微软雅黑, Tahoma, Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+.hou-iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+
+.hou-modals {}
+
+.hou-box {
+
+}
+
+.panel {
+    border-radius:1px;
+    background:#fff;
+    margin-bottom:20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.panel:last-child {
+    margin-bottom:0
+}
+
+.panel .panel-header {padding: 20px 20px 15px 20px;}
+.panel .panel-header .panel-title {
+    display: block;
+    font-size: 18px;
+    color: #37474f;
+}
+.panel .panel-header .panel-tip {
+    color:#666666;
+    font-size:13px;
+    margin-top:8px;
+    line-height:1.4;
+}
+.panel .panel-header .panel-tip strong {
+    color:#000;
+}
+.panel .panel-content {
+    padding:0 20px 20px 20px;
+}
+.panel .panel-content p {
+    line-height: 1.5;
+}
+
+.panel .panel-alone-content {
+    padding:20px;
+}
+
+/* 对semantic样式的复写 */
+.ui.header {font-weight:400;color:#37474f}
+.ui.header .sub.header {margin-top:0.25rem;font-size:14px!important;}
+.ui.statistics>.statistic {margin:0 1.5em 0.5em} /*减小margin-bottom*/
+.ui.modal>.header {background-color:#222222;color:#EEEEEE;padding-top:1rem;padding-bottom:1rem;} /* 弹出层header样式 */
+.ui.modal>.actions {border-top:0;padding-top:0.75rem;padding-bottom:0.75rem;}
+
+/* 布局头部 */
+.hou-layout-admin .hou-header {
+    height: 50px;
+    position: relative;
+    border-bottom: 1px solid #f6f6f6;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.hou-layout-admin .hou-header .hou-logo {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1002;
+    width: 220px;
+    color: rgba(255, 255, 255, .8);
+    height: 49px;
+    line-height: 50px;
+    text-align: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-weight: 300;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.hou-layout-admin .hou-header .hou-nav {
+    position: absolute;
+    left: 220px;
+
+}
+
+.hou-layout-admin .hou-header .hou-nav li {
+    display: inline-block;
+    margin: 0 0 0 20px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.hou-layout-admin .hou-header .hou-nav li i {
+    color: #4d4d4d;
+}
+
+/* 布局左侧菜单 */
+.hou-layout-admin .hou-side {
+    width: 220px;
+    position: fixed;
+    bottom: 0;
+    display:block;
+    left: 0;
+    top: 0;
+    background-color: #222222;
+    z-index: 999;
+    box-shadow: 1px 0 2px 0 rgba(0, 0, 0, .05);
+}
+
+
+/* 左侧菜单登录用户区域 */
+.hou-layout-admin .hou-side .hou-user {
+    margin-top: 65px;
+    text-align: center;
+    overflow-y: auto;
+}
+
+.hou-layout-admin .hou-side .hou-user .hou-user-avatar {
+    width: 50px;
+    margin: 0 auto;
+}
+
+.hou-layout-admin .hou-side .hou-user .hou-user-avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.hou-layout-admin .hou-side .hou-user .hou-user-info {
+    text-align: center
+}
+
+.hou-layout-admin .hou-side .hou-user .hou-user-info a {
+    font-size: 13px;
+    color: #CCC;
+}
+
+.hou-layout-admin .hou-side .hou-user .hou-user-info .nickname {
+    color:#00b3ee;
+}
+
+.hou-layout-admin .hou-side .hou-menus {
+    border-top: #222 solid 1px;
+    width: 220px;
+    margin-top:0;
+    background: 0 0;
+    padding-top: 5px;
+    height:90%;
+    overflow: hidden;
+
+}
+
+.hou-layout-admin .hou-side .hou-menus .ui.secondary.menu {
+    margin-left:0;
+    margin-right:0
+}
+
+.hou-layout-admin .hou-side .hou-menus .ui.secondary.menu .item {
+    margin: 0;
+}
+
+
+/* 一级菜单标题颜色 */
+.hou-layout-admin .hou-side .hou-menus .item > .title {
+    font-size: 14px;
+    font-weight:normal;
+    margin-bottom: 5px;
+    color:#CCCCCC!important;
+}
+
+.hou-layout-admin .hou-side .ui.secondary.menu .item .content .item{
+    font-size:14px;
+    border-left:#222 solid 2px!important;
+}
+
+.hou-layout-admin .hou-side .ui.secondary.menu .item .content .item:hover {
+    border-left-color:#00b3ee!important;
+}
+
+.hou-layout-admin .hou-body {
+    -webkit-transition: all .3s;
+    top: 90px;
+    bottom: 0;
+    left: 220px;
+    position: absolute;
+    z-index: 998;
+    right: 0;
+    width: auto;
+    overflow: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.hou-layout-admin .hou-page-nav {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 80px 0 20px;
+    background-color: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+    position: fixed;
+    top: 50px;
+    right: 0;
+    z-index: 999;
+    left: 220px;
+}
+
+.hou-layout-admin .hou-page-nav .title-box {
+}
+
+.hou-layout-admin .hou-page-nav .title-box h1 {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+}
