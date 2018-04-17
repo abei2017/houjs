@@ -4,7 +4,7 @@
     </a>
 </p>
 <p align="center">
-    A Free Admin control Panel Theme Based On Semantic UI 2.3
+    一套免费的基于JQ + RequireJS + Semantic-UI的后台管理系统
 </p>
 
 <p align="center">
@@ -22,5 +22,8 @@
     除了代码，还有诗和远方。扫码关注我的公众号。
 </p>
 
-## 开源协议（License）
+## Hou-Admin
+Hou-Admin是一套由JQ + RequireJS + Semantic-UI实现而成的通用型后台管理模板系统，相比较现在大道其行的vue和react，Hou-Admin更适合后端开发人员，拆箱即用，无需更多前端技术和工具就可以轻松搭建出华丽的后台模板。
+
+## License（开源协议）
 MIT
