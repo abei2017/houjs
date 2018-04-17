@@ -25,5 +25,13 @@
 ## Hou-Admin
 Hou-Admin是一套由JQ + RequireJS + Semantic-UI实现而成的通用型后台管理模板系统，相比较现在大道其行的vue和react，Hou-Admin更适合后端开发人员，拆箱即用，无需更多前端技术和工具就可以轻松搭建出华丽的后台模板。
 
+基于MIT开源协议发布，这意味着无论你是学习还是商业用途，都不会产生版权问题，也欢迎大家使用。
+
+我们的目标是让大家用最少的js代码实现业务需求。
+
+<p align="center">
+    <img src="https://nai8.me/images/hou/screen.jpg" width="100%" alt="截屏"/>
+</p>
+
 ## License（开源协议）
 MIT
