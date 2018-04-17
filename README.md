@@ -33,5 +33,8 @@ Hou-Admin是一套由JQ + RequireJS + Semantic-UI实现而成的通用型后台�
     <img src="https://nai8.me/images/hou/screen.jpg" width="100%" alt="截屏"/>
 </p>
 
+## Demo（演示地址）
+[https://nai8.me/hou](https://nai8.me/hou)
+
 ## License（开源协议）
 MIT
