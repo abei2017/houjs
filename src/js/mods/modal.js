@@ -233,8 +233,29 @@ define(function(require,exports,modules){
             "</div>";
     };
 
+    /**
+     * 初始化modal所在容器
+     * 如果页面没有容器div则新建
+     *
+     * @param inPage 是否在同一个页面
+     * @return {*|jQuery|HTMLElement}
+     */
     exports.initModalContainer = function(inPage){
-        return inPage === true ? $("#modals") : $("#modals",parent.document);
+        var modals;
+
+        if(inPage === true){
+            if($('#hou-modals').length === 0){
+                $('body').append("<div id='hou-modals'></div>");
+            }
+            modals = $('#hou-modals');
+        }else{
+            if($('#hou-modals',parent.document).length === 0){
+                $('body',parent.document).append("<div id='hou-modals'></div>");
+            }
+            modals = $('#hou-modals',parent.document);
+        }
+
+        return modals;
     };
 
     exports.getWindowsObj = function(inPage){
