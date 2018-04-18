@@ -21,7 +21,8 @@ define(function(require,exports,modules){
         scrolling:false,
         url:false,
         closeIcon:false,
-        closable:true
+        closable:true,
+        opacity:0.45
     };
 
     /**
@@ -48,7 +49,7 @@ define(function(require,exports,modules){
         win.$('#'+_id).modal({
             closable:type.closable,
             dimmerSettings:{
-                opacity:0.45
+                opacity:type.opacity
             },
             onHidden:function(){
                 win.$('#'+_id).remove();
@@ -78,7 +79,7 @@ define(function(require,exports,modules){
         win.$('#'+_id).modal({
             closable:false,
             dimmerSettings:{
-                opacity:0.45
+                opacity:type.opacity
             },
             onHidden:function(){
                 win.$('#'+_id).remove();
@@ -118,7 +119,7 @@ define(function(require,exports,modules){
         win.$('#'+_id).modal({
             closable:false,
             dimmerSettings:{
-                opacity:0.45
+                opacity:type.opacity
             },
             onHidden:function(){
                 win.$('#'+_id).remove();
@@ -167,7 +168,7 @@ define(function(require,exports,modules){
         win.$('#'+_id).modal({
             closable:false,
             dimmerSettings:{
-                opacity:0.45
+                opacity:type.opacity
             },
             onHidden:function(){
                 win.$('#'+_id).remove();
@@ -235,9 +236,8 @@ define(function(require,exports,modules){
 
     /**
      * 初始化modal所在容器
-     * 如果页面没有容器div则新建
      *
-     * @param inPage 是否在同一个页面
+     * @param inPage
      * @return {*|jQuery|HTMLElement}
      */
     exports.initModalContainer = function(inPage){
