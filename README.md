@@ -33,17 +33,17 @@ Hou-Admin是一套由JQ + RequireJS + Semantic-UI实现而成的通用型后台�
     <img src="https://nai8.me/images/hou/screen.jpg" width="100%" alt="截屏"/>
 </p>
 
-## Install（安装）
-下载源代码后将src下文件整体放到一个文件夹内（比如我这里放到了houjs内），然后只需要引入以下文件
+## Install of houjs（houjs的安装）
+下载源代码后将houjs整体放到服务器上，然后只需要引入以下文件
 ```html
 <!--样式文件-->
-<link href="/houjs/js/libs/semantic/semantic.min.css" rel="stylesheet">
-<link href="/houjs/css/hou.css" rel="stylesheet">
+<link href="xxx/houjs/js/libs/semantic/semantic.min.css" rel="stylesheet">
+<link href="xxx/houjs/css/hou.css" rel="stylesheet">
 
 <!--JS文件-->
-<script src="/jquery.js"></script>
-<script src="/houjs/js/libs/semantic/semantic.min.js"></script>
-<script src="/houjs/js/require.js" data-main="/houjs/js/main"></script></head>
+<script src="xxx/jquery.js"></script>
+<script src="xxx/houjs/js/libs/semantic/semantic.min.js"></script>
+<script src="xxx/houjs/js/require.js" data-main="xxx/houjs/js/main"></script></head>
 ```
 具体文件的路径请修改成您自己的，同时data-main必须指定为main.js有效的路径，它代表模块的入口配置。
 
@@ -74,6 +74,9 @@ require.config({
     });
 </script>
 ```
+
+## Set Hou-Admin（配置Hou-Admin）
+将html/hou.html做为后台的初始化页面，里面包含菜单和初始化页面。
 
 ## Libs（使用到的开源库）
 Hou-Admin在界面上使用Semantic UI和JQuery作为基础，同时使用requireJS来组织js代码使其模块化。
