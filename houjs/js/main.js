@@ -2,7 +2,7 @@
  * 配置requireJs
  */
 require.config({
-    baseUrl: '/hou/js/',
+    baseUrl: '/houjs/js/',
     paths: {
         'mods':'mods',
         'libs':'libs',

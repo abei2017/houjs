@@ -1,0 +1,14 @@
+.page-button-box {padding-bottom:10px!important;}
+.page-button-box .button {margin-right:5px;margin-bottom:10px;}
+
+.icon-box {
+    padding:27px 10px;
+    text-align:center;
+    background:#F2F2F2;
+    border-radius:4px;
+}
+
+.icon-box .name {}
+.icon-box .name a {color:#000;border-bottom:#000 solid 1px;display:inline-block}
+
+.grid-cnt-box {background:#F9F9F9;display:block;padding:10px 0;text-align:center;}
