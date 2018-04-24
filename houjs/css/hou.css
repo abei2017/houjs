@@ -254,3 +254,9 @@ body {
     opacity: 0;
     cursor: pointer
 }
+
+/* 登录框 */
+.login-box {margin:10% auto;}
+.login-box .login-logo {text-align:center}
+.login-box .login-logo img {height:80px;}
+.login-box .login-box-c {background:#FFFFFF;padding:15px;}

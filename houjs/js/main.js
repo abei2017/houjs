@@ -1,7 +1,11 @@
 /**
  * 配置requireJs
  */
-require.config({
+define('jquery',function(){
+    return jQuery;
+});
+
+requirejs.config({
     baseUrl: '/houjs/js/',
     paths: {
         'mods':'mods',
@@ -9,4 +13,6 @@ require.config({
         'modules':'modules'
     }
 });
+
+
 
