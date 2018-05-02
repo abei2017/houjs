@@ -22,7 +22,8 @@ define(function(require,exports,modules){
         url:false,
         closeIcon:false,
         closable:true,
-        opacity:0.45
+        opacity:0.45,
+        msgStyle:"text-align:center;color:#eeeeee;background:#222222;"
     };
 
     /**
@@ -70,7 +71,7 @@ define(function(require,exports,modules){
 
         var _id = "ID-MSG-" + (new Date() - 0); // Date.now()
         var html = "<div class='ui " + type.size + " modal' id='" + _id + "'>";
-        html += exports.renderContent(msg,type,"text-align:center");
+        html += exports.renderContent(msg,type,type.msgStyle);
         html += "</div>";
 
         exports.initModalContainer(type.inPage).append(html);
@@ -92,7 +93,7 @@ define(function(require,exports,modules){
             if(typeof(func) === "function"){
                 func();
             }
-        },1500);
+        },2500);
     };
 
     /**
