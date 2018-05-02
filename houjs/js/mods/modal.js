@@ -70,7 +70,7 @@ define(function(require,exports,modules){
 
         var _id = "ID-MSG-" + (new Date() - 0); // Date.now()
         var html = "<div class='ui " + type.size + " modal' id='" + _id + "'>";
-        html += exports.renderContent(msg,type);
+        html += exports.renderContent(msg,type,"text-align:center");
         html += "</div>";
 
         exports.initModalContainer(type.inPage).append(html);
@@ -209,8 +209,9 @@ define(function(require,exports,modules){
         return '<div class="header">' + title + '</div>';
     };
 
-    exports.renderContent = function(content,options){
-        return "<div class='" + (options.scrolling === true ? 'scrolling ' : '') + "content'>" + content + "</div>";
+    exports.renderContent = function(content,options,style){
+        style = typeof style !== 'undefined' ?  style : '';
+        return "<div class='" + (options.scrolling === true ? 'scrolling ' : '') + "content' style='"+style+"'>" + content + "</div>";
     };
 
     /**
