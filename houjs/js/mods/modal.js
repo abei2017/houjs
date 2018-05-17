@@ -67,6 +67,7 @@ define(function(require,exports,modules){
      */
     exports.msg = function(msg,options,func){
         var type = typeof options === 'object' ? options : {};
+        defaultOptions.opacity = 0;
         type = $.extend({}, defaultOptions, type);
 
         var _id = "ID-MSG-" + (new Date() - 0); // Date.now()
