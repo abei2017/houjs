@@ -1,10 +1,10 @@
 <p align="center">
-    <a href="https://nai8.me/hou-admin">
-        <img src="https://nai8.me/images/hou/black-logo.png" height="100" style="border-radius:10px" alt="Hou-Admin Logo"/>
+    <a href="https://nai8.me/sys/to.html?id=6">
+        <img src="https://nai8.me/uploads/data/2018/0527/x2K8FKHiFnOjoNJFXHz4ueI8y_ZY7jiI-1527350720.png" height="100" style="border-radius:10px" alt="Hou-Admin Logo"/>
     </a>
 </p>
 <p align="center">
-    一套免费的基于JQ + RequireJS + Semantic-UI的后台管理系统
+    一套免费的基于JQ + RequireJS + Semantic-UI的JS集合。
 </p>
 
 <p align="center">
