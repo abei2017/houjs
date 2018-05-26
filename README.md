@@ -83,13 +83,13 @@ Hou-Admin是一套由HouJS实现而成的通用型后台管理模板系统，相
 将html/hou.html做为后台的初始化页面，里面包含菜单和初始化页面。
 
 ## Libs（使用到的开源库）
-Hou-Admin在界面上使用Semantic UI和JQuery作为基础，同时使用requireJS来组织js代码使其模块化。
+HouJS在界面上使用Semantic UI和JQuery作为基础，同时使用requireJS来组织js代码使其模块化。
 
 ## Demo（演示地址）
-[https://nai8.me/hou](https://nai8.me/hou)
+[Hou-Admin](https://nai8.me/hou)
 
 ## Examples（一些常用方案）
-- [使用houjs集成百度ueditor编辑器](https://nai8.me/forum/detail.html?id=115)
+- [使用HouJS集成百度ueditor编辑器](https://nai8.me/forum/detail.html?id=115)
 
 ## License（开源协议）
 MIT
