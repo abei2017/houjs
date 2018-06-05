@@ -1,6 +1,8 @@
 /**
  * 加载显示
+ * 该模块主要用于ajax请求的时候
  * @author abei<abei@nai8.me>
+ * @link https://nai8.me/lang-6.html
  */
 define(function(require,exports,modules){
 
