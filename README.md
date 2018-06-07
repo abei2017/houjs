@@ -90,6 +90,7 @@ HouJS在界面上使用Semantic UI和JQuery作为基础，同时使用requireJS�
 
 ## Examples（一些常用方案）
 - [使用HouJS集成百度ueditor编辑器](https://nai8.me/forum/detail.html?id=115)
+- [实现houjs中markdown编辑器（SimpleMDE）本地上传功能](https://nai8.me/forum/detail.html?id=122)
 
 ## License（开源协议）
 MIT
