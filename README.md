@@ -12,14 +12,14 @@
 </p>
 <p align="center">
     <a href="https://nai8.me">
-        <img src="https://nai8.me/images/logo.png" height="90" alt="https://nai8.me"/>
+        <img src="https://nai8.me/images/me.jpeg" height="90" alt="https://nai8.me"/>
     </a>
 </p>
 <p align="center">
-    <img src="https://nai8.me/images/qrcodes/xiaobao-qrcode.jpg" height="180" alt="北哥小报"/>
+    <img src="https://nai8.me/images/qrcode.jpeg" height="180" alt="北哥小报"/>
 </p>
 <p align="center">
-    除了代码，还有诗和远方。扫码关注我的公众号。
+    除了代码，还有诗和远方。欢迎添加我的微信号。
 </p>
 
 ## HouJS
