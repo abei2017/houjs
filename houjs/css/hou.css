@@ -98,7 +98,7 @@ body {
 .hou-layout-admin .hou-header {
     height: 50px;
     position: relative;
-    border-bottom: 1px solid #f6f6f6;
+    border-bottom: 1px solid #EEE;
     box-sizing: border-box;
     background-color: #fff;
 }
@@ -113,7 +113,7 @@ body {
     height: 49px;
     background: #262d37;
     line-height: 50px;
-    text-align: center;
+    text-align: left;
     padding: 0 15px;
     box-sizing: border-box;
     overflow: hidden;
@@ -122,10 +122,14 @@ body {
     background-position: center center;
 }
 
+.hou-layout-admin .hou-header .hou-logo img {
+    height:31px;
+    margin:9px 10px;
+}
+
 .hou-layout-admin .hou-header .hou-nav {
     position: absolute;
     left: 220px;
-
 }
 
 .hou-layout-admin .hou-header .hou-nav li {
@@ -177,11 +181,11 @@ body {
     font-size: 14px;
     font-weight: normal;
     margin-bottom: 5px;
-    color: #CCCCCC !important;
+    color: #dbdddf !important;
 }
 
 .hou-layout-admin .hou-side .ui.secondary.menu .item .content .item {
-    font-size: 14px;
+    font-size: 13px;
     border-left: #475262 solid 2px !important;
 }
 
@@ -191,7 +195,7 @@ body {
 
 .hou-layout-admin .hou-body {
     -webkit-transition: all .3s;
-    top: 90px;
+    top: 50px;
     bottom: 0;
     left: 220px;
     position: absolute;
@@ -201,29 +205,6 @@ body {
     overflow: hidden;
     overflow-y: auto;
     box-sizing: border-box;
-}
-
-.hou-layout-admin .hou-page-nav {
-    height: 40px;
-    line-height: 40px;
-    padding: 0 80px 0 20px;
-    background-color: #fff;
-    box-sizing: border-box;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
-    position: fixed;
-    top: 50px;
-    right: 0;
-    z-index: 999;
-    left: 220px;
-}
-
-.hou-layout-admin .hou-page-nav .title-box {
-}
-
-.hou-layout-admin .hou-page-nav .title-box h1 {
-    height: 40px;
-    line-height: 40px;
-    font-size: 14px;
 }
 
 .dm-uploader {
