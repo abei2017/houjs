@@ -32,7 +32,7 @@ body {
 }
 
 .panel .panel-header {
-    padding: 20px 20px 15px 20px;
+    padding: 20px 20px 0 20px;
 }
 
 .panel .panel-header .panel-title {
@@ -53,7 +53,7 @@ body {
 }
 
 .panel .panel-content {
-    padding: 0 20px 20px 20px;
+    padding:20px;
 }
 
 .panel .panel-content p {
@@ -86,6 +86,14 @@ body {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+
+/* 优化table */
+.table {}
+.table th {color:#4d4d4d;}
+.table th a {color:#4d4d4d;}
+.table td {color:#666;}
+
+.search-box {}
 
 /* 弹出层header样式 */
 .ui.modal > .actions {
