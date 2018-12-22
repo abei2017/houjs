@@ -23,7 +23,7 @@ define(function(require,exports,modules){
         closeIcon:false,
         closable:true,
         opacity:0.45,
-        msgStyle:"text-align:center;color:#eeeeee;background:#222222;"
+        msgStyle:"text-align:center;color:#eeeeee;background:rgba(0,0,0,0.8);opacity:0.8;"
     };
 
     /**
@@ -49,9 +49,11 @@ define(function(require,exports,modules){
 
         win.$('#'+_id).modal({
             closable:type.closable,
+            duration:200,
             dimmerSettings:{
                 opacity:type.opacity
             },
+
             onHidden:function(){
                 win.$('#'+_id).remove();
             }
@@ -71,7 +73,7 @@ define(function(require,exports,modules){
         type = $.extend({}, defaultOptions, type);
 
         var _id = "ID-MSG-" + (new Date() - 0); // Date.now()
-        var html = "<div class='ui " + type.size + " modal' id='" + _id + "'>";
+        var html = "<div class='ui " + type.size + " modal' id='" + _id + "' style='background:transparent;box-shadow: none;border-radius:0'>";
         html += exports.renderContent(msg,type,type.msgStyle);
         html += "</div>";
 
@@ -120,6 +122,7 @@ define(function(require,exports,modules){
         var win = exports.getWindowsObj(type.inPage);
         win.$('#'+_id).modal({
             closable:false,
+            duration:200,
             dimmerSettings:{
                 opacity:type.opacity
             },
@@ -130,7 +133,6 @@ define(function(require,exports,modules){
                 if(typeof(ok) === "function"){
                     return ok(ele,this);
                 }
-
                 return true;
             },
             onDeny:function(ele){
@@ -169,6 +171,7 @@ define(function(require,exports,modules){
         var win = exports.getWindowsObj(type.inPage);
         win.$('#'+_id).modal({
             closable:false,
+            duration:200,
             dimmerSettings:{
                 opacity:type.opacity
             },
