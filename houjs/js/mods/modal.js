@@ -122,7 +122,7 @@ define(function(require,exports,modules){
         var win = exports.getWindowsObj(type.inPage);
         win.$('#'+_id).modal({
             closable:false,
-            duration:200,
+            duration:100,
             dimmerSettings:{
                 opacity:type.opacity
             },
