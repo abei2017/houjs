@@ -241,6 +241,11 @@ body {
     cursor: pointer
 }
 
+.dm-uploader a {
+    color:#000;
+    border-bottom:#000 solid 1px;
+}
+
 /* 登录框 */
 .login-box {
     margin: 10% auto;
