@@ -1,10 +1,11 @@
 /**
  * 弹出框
- * 该接口是对semantic ui的模型进行进一步封装。
+ * 该接口是对bootstrap的模型进行进一步封装。
  *
  * @author abei<abei@nai8.me>
- * @link https://github.com/abei2017/hou-admin
+ * @link https://github.com/abei2017/houjs
  * @License MIT
+ * @version 2.0.0
  */
 define(function(require,exports,modules){
 
@@ -23,80 +24,32 @@ define(function(require,exports,modules){
         closeIcon:false,
         closable:true,
         opacity:0.45,
-        msgStyle:"text-align:center;color:#eeeeee;background:rgba(0,0,0,0.8);opacity:0.8;"
+        iframeHeight:'300px',
+
+        scene:'warning'
     };
 
-    /**
-     * 弹出一个提示信息
-     * 该方法没有任何回调函数，仅仅作为警告使用。
-     * @param msg
-     * @param options
-     */
-    exports.alert = function(msg,options){
-        var type = typeof options === 'object' ? options : {};
-        type = $.extend({}, defaultOptions, type);
-
-        var _id = "ID-ALERT-" + (new Date() - 0); // Date.now()
-        var html = "<div class='ui " + type.size + " modal' id='" + _id + "'>";
-        html += '<i class="close icon"></i>';
-        html += exports.renderHeader((type.title ? type.title : '小提示'));
-        html += exports.renderContent(msg,type);
-        html += exports.renderOptions(false);
-        html += "</div>";
-
-        exports.initModalContainer(type.inPage).append(html);
-        var win = exports.getWindowsObj(type.inPage);
-
-        win.$('#'+_id).modal({
-            closable:type.closable,
-            duration:200,
-            dimmerSettings:{
-                opacity:type.opacity
-            },
-
-            onHidden:function(){
-                win.$('#'+_id).remove();
-            }
-        }).modal('show');
-    };
-
-    /**
-     * 弹出一个tip
-     * 该函数有一个回调参数，当然你也可以不写。
-     * @param msg
-     * @param options
-     * @param func
-     */
     exports.msg = function(msg,options,func){
         var type = typeof options === 'object' ? options : {};
-        defaultOptions.opacity = 0;
         type = $.extend({}, defaultOptions, type);
 
         var _id = "ID-MSG-" + (new Date() - 0); // Date.now()
-        var html = "<div class='ui " + type.size + " modal' id='" + _id + "' style='background:transparent;box-shadow: none;border-radius:0'>";
-        html += exports.renderContent(msg,type,type.msgStyle);
+        var html = "<div class='alert alert-"+type.scene+" fade show shadow rounded' id='" + _id + "' role='alert'>";
+        html += msg;
+        html += '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
         html += "</div>";
 
         exports.initModalContainer(type.inPage).append(html);
-        var win = exports.getWindowsObj(type.inPage);
 
-        win.$('#'+_id).modal({
-            closable:false,
-            dimmerSettings:{
-                opacity:type.opacity
-            },
-            onHidden:function(){
-                win.$('#'+_id).remove();
-            }
-        }).modal('show');
+        var win = exports.getWindowsObj(type.inPage);
+        win.$('#'+_id).alert();
 
         setTimeout(function(){
-            win.$('#'+_id).modal('hide');
-
+            win.$('#'+_id).alert('close');
             if(typeof(func) === "function"){
                 func();
             }
-        },2500);
+        },2000);
     };
 
     /**
@@ -105,139 +58,46 @@ define(function(require,exports,modules){
      * @param options 参数配置
      * @param ok 点击确定按钮后的回调
      * @param deny 点击取消按钮后的回调
-     */
+     */    
     exports.confirm = function(msg,options,ok,deny){
         var type = typeof options === 'object' ? options : {};
         type = $.extend({}, defaultOptions, type);
 
         var _id = "ID-CONFIRM-" + (new Date() - 0); // Date.now()
-        var html = "<div class='ui " + type.size + " modal' id='" + _id + "'>";
+        var html = "<div class='modal' tabindex='-1' role='dialog' id='" + _id + "'><div class='modal-dialog modal-dialog-centered'><div class='modal-content'>";
         html += exports.renderHeader("系统提示");
         html += exports.renderContent(msg,type);
         html += exports.renderOptions(type);
-        html += "</div>";
+        html += "</div></div></div>";
 
         exports.initModalContainer(type.inPage).append(html);
 
         var win = exports.getWindowsObj(type.inPage);
-        win.$('#'+_id).modal({
-            closable:false,
-            duration:100,
-            dimmerSettings:{
-                opacity:type.opacity
-            },
-            onHidden:function(){
-                win.$('#'+_id).remove();
-            },
-            onApprove:function(ele){
-                if(typeof(ok) === "function"){
-                    return ok(ele,this);
-                }
-                return true;
-            },
-            onDeny:function(ele){
-                if(typeof(deny) === "function"){
-                    return deny(ele,this);
-                }
-
-                return true;
-            }
-        }).modal('show');
+        win.$('#'+_id).modal();
     };
 
-    /**
-     * 创建一个带有iframe的dialog
-     */
-    exports.iframe = function(url,options,ok,deny){
-        var type = typeof options === 'object' ? options : {};
-        type = $.extend({}, defaultOptions, type);
-
-        var _id = "ID-IFRAME-" + (new Date() - 0); // Date.now()
-        var html = "<div class='ui " + type.size + " modal' id='" + _id + "'>";
-
-        if(type.closeIcon === true){
-            html += '<i class="close icon"></i>';
-        }
-
-        if(type.title){
-            html += exports.renderHeader(type.title);
-        }
-
-        html += exports.renderUrl(url,type);
-        html += "</div>";
-
-        exports.initModalContainer(type.inPage).append(html);
-
-        var win = exports.getWindowsObj(type.inPage);
-        win.$('#'+_id).modal({
-            closable:false,
-            duration:200,
-            dimmerSettings:{
-                opacity:type.opacity
-            },
-            onHidden:function(){
-                win.$('#'+_id).remove();
-            },
-            onApprove:function(ele){
-                if(typeof(ok) === "function"){
-                    return ok(ele,this);
-                }
-
-                return true;
-            },
-            onDeny:function(ele){
-                if(typeof(deny) === "function"){
-                    return deny(ele,this);
-                }
-
-                return true;
-            }
-        }).modal('show');
-    };
-
-    /**
-     * 将modal代码插入到body内
-     */
-    exports.append = function(){
-
-    };
-
-    /**
-     * 渲染头部
-     * @param title
-     * @return {string}
-     */
     exports.renderHeader = function(title){
         if(title === false){
             return '';
         }
-        return '<div class="header">' + title + '</div>';
+        return '<div class="modal-header"><h5 class="modal-title">' + title + '</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
     };
 
     exports.renderContent = function(content,options,style){
         style = typeof style !== 'undefined' ?  style : '';
-        return "<div class='" + (options.scrolling === true ? 'scrolling ' : '') + "content' style='"+style+"'>" + content + "</div>";
+        return "<div class='modal-body' style='"+style+"'><p>" + content + "</p></div>";
     };
 
-    /**
-     * 渲染操作区域
-     */
     exports.renderOptions = function(options){
         options = typeof options !== 'undefined' ?  options : false;
         if(options === false){
             return "";
         }
 
-        return '<div class="actions">\n' +
-            (options.denyTxt ? '<div class="ui gray deny basic tiny button">\n'+options.denyTxt+'</div>' : '') +
-            (options.okTxt ? '<div class="ui green ok basic tiny button">\n'+options.okTxt+'</div>' : '') +
+        return '<div class="modal-footer">\n' +
+            (options.denyTxt ? '<button type="button" class="btn btn-secondary" data-dismiss="modal">\n'+options.denyTxt+'</button>' : '') +
+            (options.okTxt ? '<button type="button" class="btn btn-primary">\n'+options.okTxt+'</button>' : '') +
             '  </div>';
-    };
-
-    exports.renderUrl = function(url,options){
-        return "<div class='content'>" +
-            "<iframe scrolling='auto' width='100%' height='100%' allowtransparency='true' frameborder='0' src='" +url+ "' ></iframe>" +
-            "</div>";
     };
 
     /**
@@ -266,5 +126,5 @@ define(function(require,exports,modules){
 
     exports.getWindowsObj = function(inPage){
         return inPage === true ? window : window.parent;
-    };
+    }; 
 });
