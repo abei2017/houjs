@@ -29,6 +29,13 @@ define(function(require,exports,modules){
         scene:'warning'
     };
 
+    /**
+     * 弹出一个tip
+     * 该函数有一个回调参数，当然你也可以不写。
+     * @param msg
+     * @param options
+     * @param func
+     */
     exports.msg = function(msg,options,func){
         var type = typeof options === 'object' ? options : {};
         type = $.extend({}, defaultOptions, type);
